@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class QuickSort
 {
+	// Stores what the bar array is at each step through the sorting process.
 	ArrayList<ArrayList<Bar>> allStepsArray;
 	
 	public QuickSort()
@@ -8,6 +9,7 @@ public class QuickSort
 		allStepsArray = new ArrayList<>();
 	}
 
+	// Call this method to sort everything and generate all the snapshots of the steps in between.
 	public void sort(ArrayList<Bar> pList)
 	{
 		if(!allStepsArray.isEmpty())
@@ -44,7 +46,7 @@ public class QuickSort
 			quicksort(pList, splitPoint + 1, high);
 		}
 	}
-	
+
 	private void swap(ArrayList<Bar> pList, int val1, int val2)
 	{
 		Bar placeholder = pList.get(val1);
@@ -52,9 +54,16 @@ public class QuickSort
 		pList.set(val2, placeholder);
 		allStepsArray.add(new ArrayList<>(pList));
 	}
-	
+
+	// Call this method to return all the steps of the sort process.
 	public ArrayList<ArrayList<Bar>> getAllStepsArray()
 	{
 		return allStepsArray;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "QuickSort";
 	}
 }
