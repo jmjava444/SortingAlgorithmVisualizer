@@ -39,7 +39,7 @@ public class AppWindow extends JFrame
         this.setSize(Screen.width / 2, Screen.height / 2);
         this.jSpinner.setValue(SPINNER_DEFAULT);
         this.setVisible(true);
-        // Calculates the middle of any screen
+        // Calculates the middle of the screen
         this.setLocation((Screen.width / 2) - (this.mainPanel.getWidth() / 2),
                 (Screen.height / 2) - (this.mainPanel.getHeight() / 2));
         // Add all of the action listeners
@@ -153,6 +153,7 @@ public class AppWindow extends JFrame
         {
             //arr.get(i).setBounds(barPanel.);
             barPanel.add(arr.get(i), i);
+            // TODO: Stuck here, trying to get the bar to paint fully.
         }
         barPanel.revalidate();
         barPanel.repaint();

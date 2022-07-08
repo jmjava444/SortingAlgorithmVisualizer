@@ -22,21 +22,21 @@ public class Bar extends JComponent
 	}
 
 	@Override
-	public void paintComponent(Graphics bar)
+	public void paintComponent(Graphics g)
 	{
 		if(isFilled)
 		{
-			bar.setColor(color);
+			g.setColor(color);
 			// Draw filled rectangle
-			bar.fillRoundRect(xPos, yPos, width, height, 10, 10);
-			bar.setColor(Color.white);
+			g.fillRoundRect(xPos, yPos, width, height, 10, 10);
+			g.setColor(Color.white);
 			// Draw outlined rectangle
-			bar.drawRoundRect(xPos, yPos, width + 1, height + 2, 12, 12);
+			g.drawRoundRect(xPos, yPos, width + 1, height + 2, 12, 12);
 		}
 		else
 		{
-			bar.setColor(Color.lightGray);
-			bar.drawRect(xPos, yPos, width, height);
+			g.setColor(Color.lightGray);
+			g.drawRect(xPos, yPos, width, height);
 		}
 	}
 	

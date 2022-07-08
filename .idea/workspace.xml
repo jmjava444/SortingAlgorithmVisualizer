@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="Update workspace.xml (IntelliJ handles this)">
+    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,42 @@
       <option name="project" value="LOCAL" />
       <updated>1657235024301</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Add main variable to the class.&#10;- Add currentBarGraph variable to the list&#10;- Add Spinner constants for min/max/default&#10;- Set JSpinner to default value upon instantiation of the AppWindow class&#10;- Add a bunch of action listeners with a matching method which tells it what to do when the actionListener is triggered.&#10;- Create addBarGraphToBarPanel method which clears the existing graphics on the screen, adds a new bar graph, and then revalidates and repaints the barPanel.&#10;- Create refreshBarWidth method which updates the width of the bars to match the AppWindow size after it detects a resizing event.">
+      <created>1657262742397</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657262742397</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- Add a width parameter to the constructor so that the width of the bars can be resized.&#10;- Refactored pBar to bar inside paintComponent method starting on line 25">
+      <created>1657262906017</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657262906017</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- Add javadoc comments to all methods.&#10;- Change generateNewBarGraph method to set the bar width to a size calculated from the size of the appWindow.getBarPanel.width()">
+      <created>1657263047861</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657263047861</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update">
+      <created>1657263089079</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657263089079</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Shift the actionListeners around to make it look neater.">
+      <created>1657263156657</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657263156657</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,7 +153,12 @@
     <MESSAGE value="Add comments to the methods that make sense, and create a toString() method that only returns the name of the class." />
     <MESSAGE value="Create a Screen class to handle returning the screen size dimensions. This way it's easy to call &quot;Screen.width&quot; instead of the entire Toolkit code. Mainly, make this an easy way to get the screen size." />
     <MESSAGE value="Update workspace.xml (IntelliJ handles this)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml (IntelliJ handles this)" />
+    <MESSAGE value="- Add main variable to the class.&#10;- Add currentBarGraph variable to the list&#10;- Add Spinner constants for min/max/default&#10;- Set JSpinner to default value upon instantiation of the AppWindow class&#10;- Add a bunch of action listeners with a matching method which tells it what to do when the actionListener is triggered.&#10;- Create addBarGraphToBarPanel method which clears the existing graphics on the screen, adds a new bar graph, and then revalidates and repaints the barPanel.&#10;- Create refreshBarWidth method which updates the width of the bars to match the AppWindow size after it detects a resizing event." />
+    <MESSAGE value="- Add a width parameter to the constructor so that the width of the bars can be resized.&#10;- Refactored pBar to bar inside paintComponent method starting on line 25" />
+    <MESSAGE value="- Add javadoc comments to all methods.&#10;- Change generateNewBarGraph method to set the bar width to a size calculated from the size of the appWindow.getBarPanel.width()" />
+    <MESSAGE value="Shift the actionListeners around to make it look neater." />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
