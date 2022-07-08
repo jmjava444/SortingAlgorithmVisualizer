@@ -1,8 +1,13 @@
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.util.ArrayList;
 
 public class AppWindow extends JFrame
 {
+    private Main main;
     private JSpinner jSpinner;
     private JButton generateNewGraphButton;
     private JButton previousStepButton;
@@ -13,9 +18,15 @@ public class AppWindow extends JFrame
     private JPanel barPanel;
     private JComboBox sortTypeComboBox;
     private JLabel sortTypeLabel;
+    private ArrayList<Bar> currentBarGraph;
+
+    private final int SPINNER_MIN = 3;
+    private final int SPINNER_MAX = 50;
+    private final int SPINNER_DEFAULT = 10;
 
     public AppWindow(Main main)
     {
+        this.main = main;
         this.setLookAndFeel();
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
@@ -26,8 +37,82 @@ public class AppWindow extends JFrame
         this.add(mainPanel);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(Screen.width / 2, Screen.height / 2);
+        this.jSpinner.setValue(SPINNER_DEFAULT);
         this.setVisible(true);
-        this.setLocation((Screen.width / 2) - (this.mainPanel.getWidth() / 2), (Screen.height / 2) - (this.mainPanel.getHeight() / 2));
+        // Calculates the middle of any screen
+        this.setLocation((Screen.width / 2) - (this.mainPanel.getWidth() / 2),
+                (Screen.height / 2) - (this.mainPanel.getHeight() / 2));
+        // Add all of the action listeners
+        this.addComponentListener(new ComponentListener()
+        {
+          @Override
+          public void componentResized(ComponentEvent e)
+          {
+              refreshBarWidth(currentBarGraph);
+          }
+
+          @Override
+          public void componentMoved(ComponentEvent e)
+          {
+
+          }
+
+          @Override
+          public void componentShown(ComponentEvent e)
+          {
+
+          }
+
+          @Override
+          public void componentHidden(ComponentEvent e)
+          {
+
+          }
+        });
+        jSpinner.addChangeListener(event -> jSpinnerAction());
+        sortTypeComboBox.addActionListener(event -> sortTypeComboBoxAction());
+        generateNewGraphButton.addActionListener(event -> generateNewGraphButtonAction());
+        previousStepButton.addActionListener(event -> previousStepButtonAction());
+        playButton.addActionListener(event -> playButtonAction());
+        nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
+    }
+
+    private void nextStepButtonAction()
+    {
+
+    }
+
+    private void playButtonAction()
+    {
+
+    }
+
+    private void previousStepButtonAction()
+    {
+
+    }
+
+    private void generateNewGraphButtonAction()
+    {
+        currentBarGraph = main.generateNewBarGraph(this, (int) jSpinner.getValue());
+        addBarGraphToBarPanel(currentBarGraph);
+    }
+
+    private void sortTypeComboBoxAction()
+    {
+
+    }
+
+    private void jSpinnerAction()
+    {
+        if(Integer.parseInt(jSpinner.getValue().toString()) > SPINNER_MAX)
+        {
+            jSpinner.setValue(SPINNER_MAX);
+        }
+        else if(Integer.parseInt(jSpinner.getValue().toString()) < SPINNER_MIN)
+        {
+            jSpinner.setValue(SPINNER_MIN);
+        }
     }
 
     /**
@@ -57,6 +142,31 @@ public class AppWindow extends JFrame
             // handle exception
             System.err.println("Illegal Access Exception: Switching to default...");
             setDefaultLookAndFeelDecorated(true);
+        }
+    }
+
+    public void addBarGraphToBarPanel(ArrayList<Bar> arr)
+    {
+        barPanel.removeAll();
+        setBarPanelGridLayout(arr.size());
+        for(int i = 0; i < arr.size(); i++)
+        {
+            //arr.get(i).setBounds(barPanel.);
+            barPanel.add(arr.get(i), i);
+        }
+        barPanel.revalidate();
+        barPanel.repaint();
+    }
+
+    public void refreshBarWidth(ArrayList<Bar> currentBarGraph)
+    {
+        if(currentBarGraph != null)
+        {
+            final int marginBetweenBars = 5;
+            for(Bar b : currentBarGraph)
+            {
+                b.setWidth(barPanel.getWidth() / currentBarGraph.size() - marginBetweenBars);
+            }
         }
     }
 
