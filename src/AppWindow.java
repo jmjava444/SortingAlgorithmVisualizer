@@ -43,6 +43,12 @@ public class AppWindow extends JFrame
         this.setLocation((Screen.width / 2) - (this.mainPanel.getWidth() / 2),
                 (Screen.height / 2) - (this.mainPanel.getHeight() / 2));
         // Add all of the action listeners
+        jSpinner.addChangeListener(event -> jSpinnerAction());
+        sortTypeComboBox.addActionListener(event -> sortTypeComboBoxAction());
+        generateNewGraphButton.addActionListener(event -> generateNewGraphButtonAction());
+        previousStepButton.addActionListener(event -> previousStepButtonAction());
+        playButton.addActionListener(event -> playButtonAction());
+        nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
         this.addComponentListener(new ComponentListener()
         {
           @Override
@@ -69,12 +75,6 @@ public class AppWindow extends JFrame
 
           }
         });
-        jSpinner.addChangeListener(event -> jSpinnerAction());
-        sortTypeComboBox.addActionListener(event -> sortTypeComboBoxAction());
-        generateNewGraphButton.addActionListener(event -> generateNewGraphButtonAction());
-        previousStepButton.addActionListener(event -> previousStepButtonAction());
-        playButton.addActionListener(event -> playButtonAction());
-        nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
     }
 
     private void nextStepButtonAction()
