@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Screen.java" afterDir="false" />
+    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="Update workspace.xml (IntelliJ handles this)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/Josh/Dropbox/Code and Programming/Java/Projects/My Projects/QuicksortingAlgorithm-Deprecated/src/Sorter.java",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RunManager">
@@ -65,6 +63,42 @@
       <option name="presentableId" value="Default" />
       <updated>1657163915384</updated>
     </task>
+    <task id="LOCAL-00001" summary="Rename from Window.java/Window.form to AppWindow.java/AppWindow.form. Add JComboBox for new feature: Choosing the type of sort to do. Change the background to gray for easiness on the eyes. Restrict resizing so nothing in the window gets clipped. Clean up the overall look of the UI.">
+      <created>1657234567583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657234567583</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create a main object. Create an AppWindow object and plug in the main object so that they can communicate with each other. The main object will handle the instances of windows (if in the future we want multiple instance support).">
+      <created>1657234781916</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657234781916</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add comments to the methods that make sense, and create a toString() method that only returns the name of the class.">
+      <created>1657234902477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657234902477</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create a Screen class to handle returning the screen size dimensions. This way it's easy to call &quot;Screen.width&quot; instead of the entire Toolkit code. Mainly, make this an easy way to get the screen size.">
+      <created>1657235000171</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657235000171</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update workspace.xml (IntelliJ handles this)">
+      <created>1657235024301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657235024301</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,5 +114,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Rename from Window.java/Window.form to AppWindow.java/AppWindow.form. Add JComboBox for new feature: Choosing the type of sort to do. Change the background to gray for easiness on the eyes. Restrict resizing so nothing in the window gets clipped. Clean up the overall look of the UI." />
+    <MESSAGE value="Create a main object. Create an AppWindow object and plug in the main object so that they can communicate with each other. The main object will handle the instances of windows (if in the future we want multiple instance support)." />
+    <MESSAGE value="Add comments to the methods that make sense, and create a toString() method that only returns the name of the class." />
+    <MESSAGE value="Create a Screen class to handle returning the screen size dimensions. This way it's easy to call &quot;Screen.width&quot; instead of the entire Toolkit code. Mainly, make this an easy way to get the screen size." />
+    <MESSAGE value="Update workspace.xml (IntelliJ handles this)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml (IntelliJ handles this)" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
