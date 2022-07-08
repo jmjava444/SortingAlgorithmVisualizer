@@ -11,32 +11,32 @@ public class Bar extends JComponent
 	private boolean isFilled;
 	private Color color;
 	
-	public Bar(int pHeight)
+	public Bar(int pHeight, int pWidth)
 	{
 		xPos = 0;
 		yPos = 0;
-		width = 30;
+		width = pWidth;
 		height = pHeight;
 		isFilled = true;
 		color = new Color(0, 155, 255);
 	}
 
 	@Override
-	public void paintComponent(Graphics pBar)
+	public void paintComponent(Graphics bar)
 	{
 		if(isFilled)
 		{
-			pBar.setColor(color);
+			bar.setColor(color);
 			// Draw filled rectangle
-			pBar.fillRoundRect(xPos, yPos, width, height, 10, 10);
-			pBar.setColor(Color.white);
+			bar.fillRoundRect(xPos, yPos, width, height, 10, 10);
+			bar.setColor(Color.white);
 			// Draw outlined rectangle
-			pBar.drawRoundRect(xPos, yPos, width + 1, height + 2, 12, 12);
+			bar.drawRoundRect(xPos, yPos, width + 1, height + 2, 12, 12);
 		}
 		else
 		{
-			pBar.setColor(Color.lightGray);
-			pBar.drawRect(xPos, yPos, width, height);
+			bar.setColor(Color.lightGray);
+			bar.drawRect(xPos, yPos, width, height);
 		}
 	}
 	
