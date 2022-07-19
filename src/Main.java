@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Main
@@ -30,7 +29,8 @@ public class Main
         for(int i = 0; i < numberOfBars; i++)
         {
             // Generates a new bar of random height, not exceeding the height of the JPanel it's in.
-            barArrayList.add(new Bar(generateRandomInt(0, appWindow.getBarPanel().getHeight()),
+            barArrayList.add(new Bar(
+                    generateRandomInt(0, appWindow.getBarPanel().getHeight()) - marginBetweenBars,
                     (appWindow.getBarPanel().getWidth() / numberOfBars) - marginBetweenBars));
         }
         return barArrayList;
