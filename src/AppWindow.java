@@ -23,6 +23,9 @@ public class AppWindow extends JFrame
     private final int SPINNER_MAX = 50;
     private final int SPINNER_DEFAULT = 10;
 
+    // Specifically used to store the old height of the barPanel before a resize
+    private int oldHeight;
+
     public AppWindow(Main main)
     {
         this.main = main;
@@ -42,6 +45,7 @@ public class AppWindow extends JFrame
         // Calculates the middle of the screen
         this.setLocation((Screen.width / 2) - (this.mainPanel.getWidth() / 2),
                 (Screen.height / 2) - (this.mainPanel.getHeight() / 2));
+        oldHeight = barPanel.getHeight();
         // Add all of the action listeners
         jSpinner.addChangeListener(event -> jSpinnerAction());
         sortTypeComboBox.addActionListener(event -> sortTypeComboBoxAction());
@@ -167,12 +171,13 @@ public class AppWindow extends JFrame
             for(Bar b : currentBarGraph)
             {
                 b.setWidth(barPanel.getWidth() / currentBarGraph.size() - marginBetweenBars);
-                // TODO: Fix this equation to scale the bars when the window is resized.
-                int newHeight = (int) ((double) b.getHeight() * ((double) b.getHeight() / ((double) barPanel.getHeight() - 10.0)));
+                int newHeight = (int) Math.round(((double) b.getHeight() / (double) this.oldHeight) *
+                        (double) barPanel.getHeight());
                 b.setHeight(newHeight);
                 b.setyPos(barPanel.getHeight() - b.getHeight() - 6);
                 b.repaint();
             }
+            this.oldHeight = barPanel.getHeight();
         }
     }
 
