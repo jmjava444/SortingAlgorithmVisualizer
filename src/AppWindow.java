@@ -58,7 +58,7 @@ public class AppWindow extends JFrame
           @Override
           public void componentResized(ComponentEvent e)
           {
-              refreshBarWidth(currentBarGraph);
+              refreshBarSizing(currentBarGraph);
           }
 
           @Override
@@ -163,7 +163,7 @@ public class AppWindow extends JFrame
         mainPanel.repaint();
     }
 
-    public void refreshBarWidth(ArrayList<Bar> currentBarGraph)
+    public void refreshBarSizing(ArrayList<Bar> currentBarGraph)
     {
         if(currentBarGraph != null)
         {

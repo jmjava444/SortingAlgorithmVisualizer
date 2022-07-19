@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="Remove an import: javax.swing.event.ChangeListener. This is because javax.swing has a wildcard already.&#10;&#10;Add set title to the JFrame.&#10;&#10;Ln 155-156: Set X/Y positions so that the bars display properly on the JPanel.&#10;&#10;Ln 158-159: Change calls to revalidate and repaint from JPanel barPanel to -&gt; mainPanel. Reason: Instead of updating just the barPanel, it calls to update the entire mainPanel to reduce any visual oddities that were happening.&#10;&#10;Remove unneeded lines in refreshBarWidth(). This is because the method was getting too complicated. It's now handled elsewhere.">
+    <list default="true" id="d1fe138a-b839-413d-8121-9744bc3b36b7" name="Changes" comment="Fix the bars resizing height problem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658196021519</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update">
+      <created>1658215577532</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1658215577532</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fix the bars resizing height problem.">
+      <created>1658218406428</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1658218406428</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,10 +205,11 @@
     <MESSAGE value="- Add javadoc comments to all methods.&#10;- Change generateNewBarGraph method to set the bar width to a size calculated from the size of the appWindow.getBarPanel.width()" />
     <MESSAGE value="Shift the actionListeners around to make it look neater." />
     <MESSAGE value="Refactor" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Add setClip() method to not crop the bar graphics in the bar graph. Before, there was an issue where the bars were getting cropped at the very edge of them, so the outline was not displaying properly.&#10;&#10;Change the color outline from white to light gray.&#10;&#10;Change the roundness of the bar graph from 10 to 14. It gives it a more rounded look." />
     <MESSAGE value="Remove an import: javax.swing.event.ChangeListener. This is because javax.swing has a wildcard already.&#10;&#10;Add set title to the JFrame.&#10;&#10;Ln 155-156: Set X/Y positions so that the bars display properly on the JPanel.&#10;&#10;Ln 158-159: Change calls to revalidate and repaint from JPanel barPanel to -&gt; mainPanel. Reason: Instead of updating just the barPanel, it calls to update the entire mainPanel to reduce any visual oddities that were happening.&#10;&#10;Remove unneeded lines in refreshBarWidth(). This is because the method was getting too complicated. It's now handled elsewhere." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove an import: javax.swing.event.ChangeListener. This is because javax.swing has a wildcard already.&#10;&#10;Add set title to the JFrame.&#10;&#10;Ln 155-156: Set X/Y positions so that the bars display properly on the JPanel.&#10;&#10;Ln 158-159: Change calls to revalidate and repaint from JPanel barPanel to -&gt; mainPanel. Reason: Instead of updating just the barPanel, it calls to update the entire mainPanel to reduce any visual oddities that were happening.&#10;&#10;Remove unneeded lines in refreshBarWidth(). This is because the method was getting too complicated. It's now handled elsewhere." />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Fix the bars resizing height problem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the bars resizing height problem." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
