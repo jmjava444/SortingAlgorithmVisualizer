@@ -18,6 +18,8 @@ public class AppWindow extends JFrame
     private JComboBox sortTypeComboBox;
     private JLabel sortTypeLabel;
     private ArrayList<Bar> currentBarGraph;
+    private ArrayList<ArrayList<Bar>> allStepsArray;
+    private int step = 0;
 
     private final int SPINNER_MIN = 3;
     private final int SPINNER_MAX = 50;
@@ -34,7 +36,8 @@ public class AppWindow extends JFrame
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
         // TODO: Add more sorting types in the future.
-        sortTypeComboBox.addItem(new QuickSort());
+        Sorter quickSort = new QuickSort();
+        sortTypeComboBox.addItem(quickSort);
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
@@ -83,23 +86,55 @@ public class AppWindow extends JFrame
 
     private void nextStepButtonAction()
     {
-
+        if(step < allStepsArray.size() - 1)
+            step++;
+        else
+            JOptionPane.showMessageDialog(this, "Sorting complete.");
+        currentBarGraph = allStepsArray.get(step);
+        addBarGraphToBarPanel(currentBarGraph);
     }
 
     private void playButtonAction()
     {
-
+        while(step < allStepsArray.size() - 2)
+        {
+            nextStepButtonAction();
+            try
+            {
+                Thread.sleep(200);
+            }
+            catch(InterruptedException e)
+            {
+                throw new RuntimeException(e);
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Sorting complete.");
     }
 
     private void previousStepButtonAction()
     {
-
+        if(step > 0)
+            step--;
+        else
+            JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
+        currentBarGraph = allStepsArray.get(step);
+        addBarGraphToBarPanel(currentBarGraph);
     }
 
     private void generateNewGraphButtonAction()
     {
         currentBarGraph = main.generateNewBarGraph(this, (int) jSpinner.getValue());
         addBarGraphToBarPanel(currentBarGraph);
+        step = 0;
+        sortBars();
+    }
+
+    private void sortBars()
+    {
+        if(sortTypeComboBox.getSelectedItem() instanceof Sorter)
+        {
+            allStepsArray = ((Sorter) sortTypeComboBox.getSelectedItem()).sort(this.currentBarGraph);
+        }
     }
 
     private void sortTypeComboBoxAction()
@@ -157,7 +192,7 @@ public class AppWindow extends JFrame
         {
             barPanel.add(arr.get(i), i);
             arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
-            arr.get(i).setxPos(arr.get(i).getxPos() + 1);
+            arr.get(i).setxPos(arr.get(i).getxPos());
         }
         mainPanel.revalidate();
         mainPanel.repaint();
