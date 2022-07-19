@@ -26,12 +26,13 @@ public class Bar extends JComponent
 	{
 		if(isFilled)
 		{
+			g.setClip(xPos, yPos, width + 10, getParent().getHeight());
 			g.setColor(color);
 			// Draw filled rectangle
-			g.fillRoundRect(xPos, yPos, width, height, 10, 10);
-			g.setColor(Color.white);
+			g.fillRoundRect(xPos, yPos, width, height, 14, 14);
+			g.setColor(Color.lightGray);
 			// Draw outlined rectangle
-			g.drawRoundRect(xPos, yPos, width + 1, height + 2, 12, 12);
+			g.drawRoundRect(xPos, yPos, width, height, 14, 14);
 		}
 		else
 		{
