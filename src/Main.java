@@ -18,7 +18,7 @@ public class Main
      * Starts over and creates a new bar graph with randomized values for the length of the bars and
      * uses the JSpinner to input the number of bars in the array.
      *
-     * @param appWindow: The current AppWindow object being operated on.
+     * @param appWindow The current AppWindow object being operated on.
      * @param numberOfBars The number of bars in the array. Typical use is to plug in the JSpinner value here.
      * @return The array of the randomized set of bars.
      */
