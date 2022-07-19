@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -28,6 +27,7 @@ public class AppWindow extends JFrame
     {
         this.main = main;
         this.setLookAndFeel();
+        super.setTitle("Sorting Algorithm Visualizer");
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
         // TODO: Add more sorting types in the future.
@@ -151,12 +151,12 @@ public class AppWindow extends JFrame
         setBarPanelGridLayout(arr.size());
         for(int i = 0; i < arr.size(); i++)
         {
-            //arr.get(i).setBounds(barPanel.);
             barPanel.add(arr.get(i), i);
-            // TODO: Stuck here, trying to get the bar to paint fully.
+            arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
+            arr.get(i).setxPos(arr.get(i).getxPos() + 1);
         }
-        barPanel.revalidate();
-        barPanel.repaint();
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }
 
     public void refreshBarWidth(ArrayList<Bar> currentBarGraph)
@@ -167,13 +167,20 @@ public class AppWindow extends JFrame
             for(Bar b : currentBarGraph)
             {
                 b.setWidth(barPanel.getWidth() / currentBarGraph.size() - marginBetweenBars);
+                // TODO: Fix this equation to scale the bars when the window is resized.
+                int newHeight = (int) ((double) b.getHeight() * ((double) b.getHeight() / ((double) barPanel.getHeight() - 10.0)));
+                b.setHeight(newHeight);
+                b.setyPos(barPanel.getHeight() - b.getHeight() - 6);
+                b.repaint();
             }
         }
     }
 
     public void setBarPanelGridLayout(int numberOfColumns)
     {
-        barPanel.setLayout(new GridLayout(1, numberOfColumns));
+        GridLayout gridLayout = new GridLayout(1, numberOfColumns);
+        System.out.println(gridLayout);
+        barPanel.setLayout(gridLayout);
     }
 
     public JSpinner getjSpinner()
