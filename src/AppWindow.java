@@ -86,39 +86,50 @@ public class AppWindow extends JFrame
 
     private void nextStepButtonAction()
     {
-        if(step < allStepsArray.size() - 1)
-            step++;
-        else
-            JOptionPane.showMessageDialog(this, "Sorting complete.");
-        currentBarGraph = allStepsArray.get(step);
-        addBarGraphToBarPanel(currentBarGraph);
+        if(allStepsArray != null)
+        {
+            if(step < allStepsArray.size() - 1)
+                step++;
+            else
+                JOptionPane.showMessageDialog(this, "Sorting complete.");
+            currentBarGraph = allStepsArray.get(step);
+            addBarGraphToBarPanel(currentBarGraph);
+        }
+
     }
 
     private void playButtonAction()
     {
-        while(step < allStepsArray.size() - 2)
+        if(allStepsArray != null)
         {
-            nextStepButtonAction();
-            try
+            while(step < allStepsArray.size() - 2)
             {
-                Thread.sleep(200);
+                nextStepButtonAction();
+                try
+                {
+                    Thread.sleep(200);
+                }
+                catch(InterruptedException e)
+                {
+                    throw new RuntimeException(e);
+                }
             }
-            catch(InterruptedException e)
-            {
-                throw new RuntimeException(e);
-            }
+            JOptionPane.showMessageDialog(this, "Sorting complete.");
         }
-        JOptionPane.showMessageDialog(this, "Sorting complete.");
     }
 
     private void previousStepButtonAction()
     {
-        if(step > 0)
-            step--;
-        else
-            JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
-        currentBarGraph = allStepsArray.get(step);
-        addBarGraphToBarPanel(currentBarGraph);
+        if(allStepsArray != null)
+        {
+            if(step > 0)
+                step--;
+            else
+                JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
+            currentBarGraph = allStepsArray.get(step);
+            addBarGraphToBarPanel(currentBarGraph);
+        }
+
     }
 
     private void generateNewGraphButtonAction()
