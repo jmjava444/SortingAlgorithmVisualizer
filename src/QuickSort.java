@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class QuickSort
+public class QuickSort extends Sorter
 {
 	// Stores what the bar array is at each step through the sorting process.
 	ArrayList<ArrayList<Bar>> allStepsArray;
@@ -10,13 +10,14 @@ public class QuickSort
 	}
 
 	// Call this method to sort everything and generate all the snapshots of the steps in between.
-	public void sort(ArrayList<Bar> pList)
+	public ArrayList<ArrayList<Bar>> sort(ArrayList<Bar> pList)
 	{
 		if(!allStepsArray.isEmpty())
 		{
 			allStepsArray.clear();
 		}
 		quicksort(pList, 0, pList.size() - 1);
+		return allStepsArray;
 	}
 	
 	private int partition(ArrayList<Bar> pList, int low, int high)
