@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Objects;
 
 public class Bar extends JComponent
 {
@@ -114,5 +115,21 @@ public class Bar extends JComponent
 	public void setColor(Color color)
 	{
 		this.color = color;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if(this == o) return true;
+		if(o == null || getClass() != o.getClass()) return false;
+		Bar bar = (Bar) o;
+		return getxPos() == bar.getxPos() && getyPos() == bar.getyPos() && getWidth() == bar.getWidth() && getHeight() == bar.getHeight() && isFilled == bar.isFilled && Objects.equals(
+				getColor(), bar.getColor());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(getxPos(), getyPos(), getWidth(), getHeight(), isFilled, getColor());
 	}
 }

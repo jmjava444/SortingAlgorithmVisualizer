@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class AppWindow extends JFrame
 {
@@ -36,8 +37,8 @@ public class AppWindow extends JFrame
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
         // TODO: Add more sorting types in the future.
-        Sorter quickSort = new QuickSort();
-        sortTypeComboBox.addItem(quickSort);
+        sortTypeComboBox.addItem(new QuickSort());
+        sortTypeComboBox.addItem(new BogoSort());
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
@@ -102,21 +103,14 @@ public class AppWindow extends JFrame
     {
         if(allStepsArray != null)
         {
-            while(step < allStepsArray.size() - 2)
+            while(step < allStepsArray.size() - 1)
             {
                 nextStepButtonAction();
-                try
-                {
-                    Thread.sleep(200);
-                }
-                catch(InterruptedException e)
-                {
-                    throw new RuntimeException(e);
-                }
             }
-            JOptionPane.showMessageDialog(this, "Sorting complete.");
+            displayInfoMessage();
         }
     }
+
 
     private void previousStepButtonAction()
     {
@@ -150,7 +144,24 @@ public class AppWindow extends JFrame
 
     private void sortTypeComboBoxAction()
     {
-
+        try
+        {
+            if(allStepsArray != null)
+            {
+                allStepsArray = new ArrayList<>();
+                barPanel.removeAll();
+                mainPanel.revalidate();
+                mainPanel.repaint();
+            }
+        }
+        catch(ClassCastException e)
+        {
+            System.err.println("Class cast exception.");
+        }
+        catch(NullPointerException e)
+        {
+            System.err.println("removeAll() function logic error.");
+        }
     }
 
     private void jSpinnerAction()
@@ -225,6 +236,26 @@ public class AppWindow extends JFrame
             }
             this.oldHeight = barPanel.getHeight();
         }
+    }
+
+    private void displayInfoMessage()
+    {
+        try
+        {
+            if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
+            {
+                JOptionPane.showMessageDialog(this, "10,000 tries were exhausted and the computer stopped to conserve resources. Items may or may not be sorted.");
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Sorting complete.");
+        }
+        catch(HeadlessException e)
+        {
+            System.err.println("This application is designed to have a graphical user interface. " +
+                    "Only run on a machine capable of displaying a GUI.");
+            System.exit(ERROR);
+        }
+
     }
 
     public void setBarPanelGridLayout(int numberOfColumns)
