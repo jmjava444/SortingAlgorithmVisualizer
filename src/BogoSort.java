@@ -6,7 +6,7 @@ import java.util.Collections;
 public class BogoSort extends Sorter
 {
     private ArrayList<ArrayList<Bar>> allStepsArray;
-    private final int MAX_ARRAY_SIZE = 9999;
+    private static final int MAX_ARRAY_SIZE = 1000000;
 
     public BogoSort()
     {
@@ -48,6 +48,11 @@ public class BogoSort extends Sorter
     public void setAllStepsArray(ArrayList<ArrayList<Bar>> allStepsArray)
     {
         this.allStepsArray = allStepsArray;
+    }
+
+    public static int getMAX_ARRAY_SIZE()
+    {
+        return MAX_ARRAY_SIZE;
     }
 
     @Override

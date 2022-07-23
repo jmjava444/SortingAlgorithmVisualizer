@@ -144,6 +144,10 @@ public class AppWindow extends JFrame
 
     private void sortTypeComboBoxAction()
     {
+        displayInfoMessage("""
+                        BogoSort is a method that uses a random shuffle to sort the items and is not efficient 
+                        at all. Sorting more than 13 items will almost certainly take forever to complete.""",
+                JOptionPane.WARNING_MESSAGE);
         try
         {
             if(allStepsArray != null)
@@ -238,13 +242,28 @@ public class AppWindow extends JFrame
         }
     }
 
-    private void displayInfoMessage()
+    public void displayInfoMessage(String message, int msgType)
+    {
+        try
+        {
+            JOptionPane.showMessageDialog(this, message, "", msgType);
+        }
+        catch(HeadlessException e)
+        {
+            System.err.println("This application is designed to have a graphical user interface. " +
+                    "Only run on a machine capable of displaying a GUI.");
+            System.exit(ERROR);
+        }
+    }
+    public void displayInfoMessage()
     {
         try
         {
             if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
             {
-                JOptionPane.showMessageDialog(this, "10,000 tries were exhausted and the computer stopped to conserve resources. Items may or may not be sorted.");
+                JOptionPane.showMessageDialog(this, "Up to " + BogoSort.getMAX_ARRAY_SIZE() +
+                        " tries were exhausted and the computer stopped to conserve resources. Items may " +
+                        "or may not be sorted.");
             }
             else
                 JOptionPane.showMessageDialog(this, "Sorting complete.");
