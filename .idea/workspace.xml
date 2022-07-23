@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SortingAlgorithmVisualizer:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="">
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Change displayInfoMessage method &#10;to include an extra overloaded method.">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BogoSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BogoSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +39,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Josh/Dropbox/Code and Programming/Java/Projects/My Projects/QuicksortingAlgorithm-Deprecated/src/Sorter.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Josh/Dropbox/Code and Programming/Java/Projects/My Projects/QuicksortingAlgorithm-Deprecated/src/Sorter.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -237,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658454811801</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Change displayInfoMessage method &#10;to include an extra overloaded method.">
+      <created>1658550832452</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1658550832452</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +286,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Add BogoSort" />
     <MESSAGE value="Add sortTypeComboBoxAction() method. Reason: When the user selects a new sort type, it clears the bar graph graphic to avoid buggy behavior, such as generating a new graph then changing the sort type.&#10;&#10;Create new method displayInfoMessage(). Reason: When bogosort is selected the list may never get sorted completely, so after 10,000 tries, the dialog window pops up stating a different message." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sortTypeComboBoxAction() method. Reason: When the user selects a new sort type, it clears the bar graph graphic to avoid buggy behavior, such as generating a new graph then changing the sort type.&#10;&#10;Create new method displayInfoMessage(). Reason: When bogosort is selected the list may never get sorted completely, so after 10,000 tries, the dialog window pops up stating a different message." />
+    <MESSAGE value="Change displayInfoMessage method &#10;to include an extra overloaded method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change displayInfoMessage method &#10;to include an extra overloaded method." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
