@@ -39,6 +39,7 @@ public class AppWindow extends JFrame
         // TODO: Add more sorting types in the future.
         sortTypeComboBox.addItem(new QuickSort());
         sortTypeComboBox.addItem(new BogoSort());
+        sortTypeComboBox.addItem(new InsertionSort());
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
@@ -117,11 +118,13 @@ public class AppWindow extends JFrame
         if(allStepsArray != null)
         {
             if(step > 0)
+            {
                 step--;
+                currentBarGraph = allStepsArray.get(step);
+                addBarGraphToBarPanel(currentBarGraph);
+            }
             else
                 JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
-            currentBarGraph = allStepsArray.get(step);
-            addBarGraphToBarPanel(currentBarGraph);
         }
 
     }
@@ -144,10 +147,11 @@ public class AppWindow extends JFrame
 
     private void sortTypeComboBoxAction()
     {
-        displayInfoMessage("""
+        if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
+            displayInfoMessage("""
                         BogoSort is a method that uses a random shuffle to sort the items and is not efficient 
                         at all. Sorting more than 13 items will almost certainly take forever to complete.""",
-                JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.WARNING_MESSAGE);
         try
         {
             if(allStepsArray != null)
@@ -280,7 +284,6 @@ public class AppWindow extends JFrame
     public void setBarPanelGridLayout(int numberOfColumns)
     {
         GridLayout gridLayout = new GridLayout(1, numberOfColumns);
-        System.out.println(gridLayout);
         barPanel.setLayout(gridLayout);
     }
 

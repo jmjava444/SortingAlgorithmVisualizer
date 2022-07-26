@@ -11,7 +11,16 @@ public class Bar extends JComponent
 	private int height;
 	private boolean isFilled;
 	private Color color;
-	
+
+	public Bar()
+	{
+		xPos = 0;
+		yPos = 0;
+		width = 0;
+		height = 0;
+		isFilled = true;
+		color = new Color(0, 155, 255);
+	}
 	public Bar(int pHeight, int pWidth)
 	{
 		xPos = 0;
