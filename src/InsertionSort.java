@@ -10,7 +10,7 @@ public class InsertionSort extends Sorter
     public ArrayList<ArrayList<Bar>> sort(ArrayList<Bar> barArrayList)
     {
         allStepsArray = new ArrayList<>();
-        allStepsArray.add(barArrayList);
+        allStepsArray.add(new ArrayList<>(barArrayList));
         insertionSort(barArrayList);
         return allStepsArray;
     }

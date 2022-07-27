@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ public class AppWindow extends JFrame
     private ArrayList<Bar> currentBarGraph;
     private ArrayList<ArrayList<Bar>> allStepsArray;
     private int step = 0;
+    private Timer timer;
 
     private final int SPINNER_MIN = 3;
     private final int SPINNER_MAX = 50;
@@ -58,6 +61,16 @@ public class AppWindow extends JFrame
         previousStepButton.addActionListener(event -> previousStepButtonAction());
         playButton.addActionListener(event -> playButtonAction());
         nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
+        timer = new Timer(100, event ->
+        {
+            if(step < allStepsArray.size() - 1)
+                nextStepButtonAction();
+            else
+            {
+                timer.stop();
+                nextStepButtonAction();
+            }
+        });
         this.addComponentListener(new ComponentListener()
         {
           @Override
@@ -86,6 +99,22 @@ public class AppWindow extends JFrame
         });
     }
 
+    private void playButtonAction()
+    {
+        if(allStepsArray != null)
+        {
+            if(playButton.getText().equals("Play Animation"))
+                playButton.setText("Pause");
+            else
+                playButton.setText("Play Animation");
+
+            if(timer.isRunning())
+                timer.stop();
+            else
+                timer.start();
+        }
+    }
+
     private void nextStepButtonAction()
     {
         if(allStepsArray != null)
@@ -93,25 +122,15 @@ public class AppWindow extends JFrame
             if(step < allStepsArray.size() - 1)
                 step++;
             else
+            {
                 JOptionPane.showMessageDialog(this, "Sorting complete.");
+                playButton.setText("Play Animation");
+            }
             currentBarGraph = allStepsArray.get(step);
             addBarGraphToBarPanel(currentBarGraph);
         }
 
     }
-
-    private void playButtonAction()
-    {
-        if(allStepsArray != null)
-        {
-            while(step < allStepsArray.size() - 1)
-            {
-                nextStepButtonAction();
-            }
-            displayInfoMessage();
-        }
-    }
-
 
     private void previousStepButtonAction()
     {
@@ -123,7 +142,7 @@ public class AppWindow extends JFrame
                 currentBarGraph = allStepsArray.get(step);
                 addBarGraphToBarPanel(currentBarGraph);
             }
-            else
+            else if (step == 0)
                 JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
         }
 
@@ -134,7 +153,29 @@ public class AppWindow extends JFrame
         currentBarGraph = main.generateNewBarGraph(this, (int) jSpinner.getValue());
         addBarGraphToBarPanel(currentBarGraph);
         step = 0;
+        timer.stop();
+        playButton.setText("Play Animation");
         sortBars();
+    }
+
+    public void addBarGraphToBarPanel(ArrayList<Bar> arr)
+    {
+        barPanel.removeAll();
+        setBarPanelGridLayout(arr.size());
+        for(int i = 0; i < arr.size(); i++)
+        {
+            barPanel.add(arr.get(i), i);
+            arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
+            arr.get(i).setxPos(arr.get(i).getxPos());
+        }
+        mainPanel.revalidate();
+        mainPanel.repaint();
+    }
+
+    public void setBarPanelGridLayout(int numberOfColumns)
+    {
+        GridLayout gridLayout = new GridLayout(1, numberOfColumns);
+        barPanel.setLayout(gridLayout);
     }
 
     private void sortBars()
@@ -214,20 +255,6 @@ public class AppWindow extends JFrame
         }
     }
 
-    public void addBarGraphToBarPanel(ArrayList<Bar> arr)
-    {
-        barPanel.removeAll();
-        setBarPanelGridLayout(arr.size());
-        for(int i = 0; i < arr.size(); i++)
-        {
-            barPanel.add(arr.get(i), i);
-            arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
-            arr.get(i).setxPos(arr.get(i).getxPos());
-        }
-        mainPanel.revalidate();
-        mainPanel.repaint();
-    }
-
     public void refreshBarSizing(ArrayList<Bar> currentBarGraph)
     {
         if(currentBarGraph != null)
@@ -245,7 +272,6 @@ public class AppWindow extends JFrame
             this.oldHeight = barPanel.getHeight();
         }
     }
-
     public void displayInfoMessage(String message, int msgType)
     {
         try
@@ -259,6 +285,7 @@ public class AppWindow extends JFrame
             System.exit(ERROR);
         }
     }
+
     public void displayInfoMessage()
     {
         try
@@ -279,12 +306,6 @@ public class AppWindow extends JFrame
             System.exit(ERROR);
         }
 
-    }
-
-    public void setBarPanelGridLayout(int numberOfColumns)
-    {
-        GridLayout gridLayout = new GridLayout(1, numberOfColumns);
-        barPanel.setLayout(gridLayout);
     }
 
     public JSpinner getjSpinner()

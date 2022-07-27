@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Create platform specific package">
-      <change afterPath="$PROJECT_DIR$/src/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SortingAlgorithmVisualizer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertionSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +47,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
     "last_opened_file_path": "C:/Users/111jm/Dropbox/Code and Programming/Java/Projects/My Projects/SortingAlgorithmVisualizer",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
 }]]></component>
   <component name="RunManager">
@@ -264,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658555848944</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane">
+      <created>1658822674945</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1658822674945</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,43 +306,8 @@
     <MESSAGE value="Add sortTypeComboBoxAction() method. Reason: When the user selects a new sort type, it clears the bar graph graphic to avoid buggy behavior, such as generating a new graph then changing the sort type.&#10;&#10;Create new method displayInfoMessage(). Reason: When bogosort is selected the list may never get sorted completely, so after 10,000 tries, the dialog window pops up stating a different message." />
     <MESSAGE value="Change displayInfoMessage method &#10;to include an extra overloaded method." />
     <MESSAGE value="Create platform specific package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create platform specific package" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AppWindow.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
