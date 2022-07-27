@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658960815589</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Update">
+      <created>1658960985281</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1658960985281</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,14 +315,14 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="Make the Quicksort class return the full Array of an Array" />
     <MESSAGE value="Create an abstract class Sorter that must implement the method called sort()" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Add BogoSort" />
     <MESSAGE value="Add sortTypeComboBoxAction() method. Reason: When the user selects a new sort type, it clears the bar graph graphic to avoid buggy behavior, such as generating a new graph then changing the sort type.&#10;&#10;Create new method displayInfoMessage(). Reason: When bogosort is selected the list may never get sorted completely, so after 10,000 tries, the dialog window pops up stating a different message." />
     <MESSAGE value="Change displayInfoMessage method &#10;to include an extra overloaded method." />
     <MESSAGE value="Create platform specific package" />
     <MESSAGE value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
     <MESSAGE value="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

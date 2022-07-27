@@ -1,11 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class AppWindow extends JFrame
 {
@@ -43,6 +40,7 @@ public class AppWindow extends JFrame
         sortTypeComboBox.addItem(new QuickSort());
         sortTypeComboBox.addItem(new BogoSort());
         sortTypeComboBox.addItem(new InsertionSort());
+        sortTypeComboBox.addItem(new BubbleSort());
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
