@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertionSort.java" afterDir="false" />
-    </list>
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658822674945</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended">
+      <created>1658960815589</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1658960815589</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,7 +310,8 @@
     <MESSAGE value="Change displayInfoMessage method &#10;to include an extra overloaded method." />
     <MESSAGE value="Create platform specific package" />
     <MESSAGE value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
+    <MESSAGE value="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
