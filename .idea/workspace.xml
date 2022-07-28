@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/BubbleSort.java" afterDir="false" />
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Create abstract toString method to the Sorter class.">
+      <change afterPath="$PROJECT_DIR$/src/HeapSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
     </list>
@@ -283,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658960985281</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add Bubble Sort Class">
+      <created>1658964895858</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1658964895858</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Create abstract toString method to the Sorter class.">
+      <created>1658965047850</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1658965047850</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,7 +336,9 @@
     <MESSAGE value="Add Insertion Sort Algorithm&#10;and fixed a minor bug with the JOptionPane" />
     <MESSAGE value="Add play button functionality&#10;It plays the animation and testing the other buttons while it plays works as intended" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Add Bubble Sort Class" />
+    <MESSAGE value="Create abstract toString method to the Sorter class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create abstract toString method to the Sorter class." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

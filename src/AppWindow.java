@@ -41,6 +41,7 @@ public class AppWindow extends JFrame
         sortTypeComboBox.addItem(new BogoSort());
         sortTypeComboBox.addItem(new InsertionSort());
         sortTypeComboBox.addItem(new BubbleSort());
+        sortTypeComboBox.addItem(new HeapSort());
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
