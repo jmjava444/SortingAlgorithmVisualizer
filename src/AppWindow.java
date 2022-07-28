@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class AppWindow extends JFrame
 {
-    private Main main;
+    private final Main main;
     private JSpinner jSpinner;
     private JButton generateNewGraphButton;
     private JButton previousStepButton;
@@ -15,11 +15,12 @@ public class AppWindow extends JFrame
     private JLabel instructionsLabel;
     private JPanel mainPanel;
     private JPanel barPanel;
-    private JComboBox sortTypeComboBox;
+    private JComboBox<Sorter> sortTypeComboBox;
     private JLabel sortTypeLabel;
     private ArrayList<Bar> currentBarGraph;
     private ArrayList<ArrayList<Bar>> allStepsArray;
     private int step = 0;
+    private Timer timer;
 
     private final int SPINNER_MIN = 3;
     private final int SPINNER_MAX = 50;
@@ -36,8 +37,12 @@ public class AppWindow extends JFrame
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
         // TODO: Add more sorting types in the future.
-        Sorter quickSort = new QuickSort();
-        sortTypeComboBox.addItem(quickSort);
+        sortTypeComboBox.addItem(new BogoSort());
+        sortTypeComboBox.addItem(new BubbleSort());
+        sortTypeComboBox.addItem(new HeapSort());
+        sortTypeComboBox.addItem(new InsertionSort());
+        sortTypeComboBox.addItem(new QuickSort());
+        sortTypeComboBox.setSelectedItem(null);
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
@@ -55,7 +60,17 @@ public class AppWindow extends JFrame
         generateNewGraphButton.addActionListener(event -> generateNewGraphButtonAction());
         previousStepButton.addActionListener(event -> previousStepButtonAction());
         playButton.addActionListener(event -> playButtonAction());
-        nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
+        nextStepButton.addActionListener(event -> nextStepButtonAction());
+        timer = new Timer(100, event ->
+        {
+            if(step < allStepsArray.size() - 1)
+                nextStepButtonAction();
+            else
+            {
+                timer.stop();
+                nextStepButtonAction();
+            }
+        });
         this.addComponentListener(new ComponentListener()
         {
           @Override
@@ -84,6 +99,22 @@ public class AppWindow extends JFrame
         });
     }
 
+    private void playButtonAction()
+    {
+        if(allStepsArray != null)
+        {
+            if(playButton.getText().equals("Play Animation"))
+                playButton.setText("Pause");
+            else
+                playButton.setText("Play Animation");
+
+            if(timer.isRunning())
+                timer.stop();
+            else
+                timer.start();
+        }
+    }
+
     private void nextStepButtonAction()
     {
         if(allStepsArray != null)
@@ -91,31 +122,14 @@ public class AppWindow extends JFrame
             if(step < allStepsArray.size() - 1)
                 step++;
             else
+            {
                 JOptionPane.showMessageDialog(this, "Sorting complete.");
+                playButton.setText("Play Animation");
+            }
             currentBarGraph = allStepsArray.get(step);
             addBarGraphToBarPanel(currentBarGraph);
         }
 
-    }
-
-    private void playButtonAction()
-    {
-        if(allStepsArray != null)
-        {
-            while(step < allStepsArray.size() - 2)
-            {
-                nextStepButtonAction();
-                try
-                {
-                    Thread.sleep(200);
-                }
-                catch(InterruptedException e)
-                {
-                    throw new RuntimeException(e);
-                }
-            }
-            JOptionPane.showMessageDialog(this, "Sorting complete.");
-        }
     }
 
     private void previousStepButtonAction()
@@ -123,11 +137,13 @@ public class AppWindow extends JFrame
         if(allStepsArray != null)
         {
             if(step > 0)
+            {
                 step--;
-            else
+                currentBarGraph = allStepsArray.get(step);
+                addBarGraphToBarPanel(currentBarGraph);
+            }
+            else if (step == 0)
                 JOptionPane.showMessageDialog(this, "You reached the beginning unsorted state.");
-            currentBarGraph = allStepsArray.get(step);
-            addBarGraphToBarPanel(currentBarGraph);
         }
 
     }
@@ -137,7 +153,29 @@ public class AppWindow extends JFrame
         currentBarGraph = main.generateNewBarGraph(this, (int) jSpinner.getValue());
         addBarGraphToBarPanel(currentBarGraph);
         step = 0;
+        timer.stop();
+        playButton.setText("Play Animation");
         sortBars();
+    }
+
+    public void addBarGraphToBarPanel(ArrayList<Bar> arr)
+    {
+        barPanel.removeAll();
+        setBarPanelGridLayout(arr.size());
+        for(int i = 0; i < arr.size(); i++)
+        {
+            barPanel.add(arr.get(i), i);
+            arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
+            arr.get(i).setxPos(arr.get(i).getxPos());
+        }
+        mainPanel.revalidate();
+        mainPanel.repaint();
+    }
+
+    public void setBarPanelGridLayout(int numberOfColumns)
+    {
+        GridLayout gridLayout = new GridLayout(1, numberOfColumns);
+        barPanel.setLayout(gridLayout);
     }
 
     private void sortBars()
@@ -150,7 +188,29 @@ public class AppWindow extends JFrame
 
     private void sortTypeComboBoxAction()
     {
-
+        if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
+            displayInfoMessage("""
+                        BogoSort is a method that uses a random shuffle to sort the items and is not efficient
+                         at all. Sorting more than 13 items will almost certainly take forever to complete.""",
+                        JOptionPane.WARNING_MESSAGE);
+        try
+        {
+            if(allStepsArray != null)
+            {
+                allStepsArray = new ArrayList<>();
+                barPanel.removeAll();
+                mainPanel.revalidate();
+                mainPanel.repaint();
+            }
+        }
+        catch(ClassCastException e)
+        {
+            System.err.println("Class cast exception.");
+        }
+        catch(NullPointerException e)
+        {
+            System.err.println("removeAll() function logic error.");
+        }
     }
 
     private void jSpinnerAction()
@@ -195,20 +255,6 @@ public class AppWindow extends JFrame
         }
     }
 
-    public void addBarGraphToBarPanel(ArrayList<Bar> arr)
-    {
-        barPanel.removeAll();
-        setBarPanelGridLayout(arr.size());
-        for(int i = 0; i < arr.size(); i++)
-        {
-            barPanel.add(arr.get(i), i);
-            arr.get(i).setyPos(barPanel.getHeight() - arr.get(i).getHeight() - 6);
-            arr.get(i).setxPos(arr.get(i).getxPos());
-        }
-        mainPanel.revalidate();
-        mainPanel.repaint();
-    }
-
     public void refreshBarSizing(ArrayList<Bar> currentBarGraph)
     {
         if(currentBarGraph != null)
@@ -226,72 +272,18 @@ public class AppWindow extends JFrame
             this.oldHeight = barPanel.getHeight();
         }
     }
-
-    public void setBarPanelGridLayout(int numberOfColumns)
+    public void displayInfoMessage(String message, int msgType)
     {
-        GridLayout gridLayout = new GridLayout(1, numberOfColumns);
-        System.out.println(gridLayout);
-        barPanel.setLayout(gridLayout);
-    }
-
-    public JSpinner getjSpinner()
-    {
-        return jSpinner;
-    }
-
-    public void setjSpinner(JSpinner jSpinner)
-    {
-        this.jSpinner = jSpinner;
-    }
-
-    public JButton getGenerateNewGraphButton()
-    {
-        return generateNewGraphButton;
-    }
-
-    public void setGenerateNewGraphButton(JButton generateNewGraphButton)
-    {
-        this.generateNewGraphButton = generateNewGraphButton;
-    }
-
-    public JButton getPreviousStepButton()
-    {
-        return previousStepButton;
-    }
-
-    public void setPreviousStepButton(JButton previousStepButton)
-    {
-        this.previousStepButton = previousStepButton;
-    }
-
-    public JButton getPlayButton()
-    {
-        return playButton;
-    }
-
-    public void setPlayButton(JButton playButton)
-    {
-        this.playButton = playButton;
-    }
-
-    public JButton getNextStepButton()
-    {
-        return nextStepButton;
-    }
-
-    public void setNextStepButton(JButton nextStepButton)
-    {
-        this.nextStepButton = nextStepButton;
-    }
-
-    public JPanel getMainPanel()
-    {
-        return mainPanel;
-    }
-
-    public void setMainPanel(JPanel mainPanel)
-    {
-        this.mainPanel = mainPanel;
+        try
+        {
+            JOptionPane.showMessageDialog(this, message, "", msgType);
+        }
+        catch(HeadlessException e)
+        {
+            System.err.println("This application is designed to have a graphical user interface. " +
+                    "Only run on a machine capable of displaying a GUI.");
+            System.exit(ERROR);
+        }
     }
 
     public JPanel getBarPanel()
@@ -299,18 +291,4 @@ public class AppWindow extends JFrame
         return barPanel;
     }
 
-    public void setBarPanel(JPanel barPanel)
-    {
-        this.barPanel = barPanel;
-    }
-
-    public JComboBox getSortTypeComboBox()
-    {
-        return sortTypeComboBox;
-    }
-
-    public void setSortTypeComboBox(JComboBox sortTypeComboBox)
-    {
-        this.sortTypeComboBox = sortTypeComboBox;
-    }
 }

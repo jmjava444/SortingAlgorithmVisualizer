@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Objects;
 
 public class Bar extends JComponent
 {
@@ -8,9 +9,18 @@ public class Bar extends JComponent
 	private int yPos;
 	private int width;
 	private int height;
-	private boolean isFilled;
-	private Color color;
-	
+	private final boolean isFilled;
+	private final Color color;
+
+	public Bar()
+	{
+		xPos = 0;
+		yPos = 0;
+		width = 0;
+		height = 0;
+		isFilled = true;
+		color = new Color(0, 155, 255);
+	}
 	public Bar(int pHeight, int pWidth)
 	{
 		xPos = 0;
@@ -95,24 +105,25 @@ public class Bar extends JComponent
 	{
 		this.height = height;
 	}
-	
-	public boolean getIsFilled()
-	{
-		return isFilled;
-	}
-	
-	public void setIsFilled(boolean isFilled)
-	{
-		this.isFilled = isFilled;
-	}
-	
+
 	public Color getColor()
 	{
 		return color;
 	}
-	
-	public void setColor(Color color)
+
+	@Override
+	public boolean equals(Object o)
 	{
-		this.color = color;
+		if(this == o) return true;
+		if(o == null || getClass() != o.getClass()) return false;
+		Bar bar = (Bar) o;
+		return getxPos() == bar.getxPos() && getyPos() == bar.getyPos() && getWidth() == bar.getWidth() && getHeight() == bar.getHeight() && isFilled == bar.isFilled && Objects.equals(
+				getColor(), bar.getColor());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(getxPos(), getyPos(), getWidth(), getHeight(), isFilled, getColor());
 	}
 }

@@ -56,12 +56,6 @@ public class QuickSort extends Sorter
 		allStepsArray.add(new ArrayList<>(pList));
 	}
 
-	// Call this method to return all the steps of the sort process.
-	public ArrayList<ArrayList<Bar>> getAllStepsArray()
-	{
-		return allStepsArray;
-	}
-
 	@Override
 	public String toString()
 	{
