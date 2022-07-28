@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Create abstract toString method to the Sorter class.">
-      <change afterPath="$PROJECT_DIR$/src/HeapSort.java" afterDir="false" />
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add Heapsort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
     </list>
@@ -297,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658965047850</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add Heapsort">
+      <created>1658979399312</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1658979399312</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,7 +319,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Rename from Window.java/Window.form to AppWindow.java/AppWindow.form. Add JComboBox for new feature: Choosing the type of sort to do. Change the background to gray for easiness on the eyes. Restrict resizing so nothing in the window gets clipped. Clean up the overall look of the UI." />
     <MESSAGE value="Create a main object. Create an AppWindow object and plug in the main object so that they can communicate with each other. The main object will handle the instances of windows (if in the future we want multiple instance support)." />
     <MESSAGE value="Add comments to the methods that make sense, and create a toString() method that only returns the name of the class." />
     <MESSAGE value="Create a Screen class to handle returning the screen size dimensions. This way it's easy to call &quot;Screen.width&quot; instead of the entire Toolkit code. Mainly, make this an easy way to get the screen size." />
@@ -338,7 +343,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Add Bubble Sort Class" />
     <MESSAGE value="Create abstract toString method to the Sorter class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create abstract toString method to the Sorter class." />
+    <MESSAGE value="Add Heapsort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Heapsort" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

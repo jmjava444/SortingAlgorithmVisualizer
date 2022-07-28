@@ -15,7 +15,7 @@ public class AppWindow extends JFrame
     private JLabel instructionsLabel;
     private JPanel mainPanel;
     private JPanel barPanel;
-    private JComboBox sortTypeComboBox;
+    private JComboBox<Sorter> sortTypeComboBox;
     private JLabel sortTypeLabel;
     private ArrayList<Bar> currentBarGraph;
     private ArrayList<ArrayList<Bar>> allStepsArray;
@@ -37,11 +37,12 @@ public class AppWindow extends JFrame
         this.setMinimumSize(mainPanel.getMinimumSize());
         // The ComboBox only supports 1 type of sort at the moment.
         // TODO: Add more sorting types in the future.
-        sortTypeComboBox.addItem(new QuickSort());
         sortTypeComboBox.addItem(new BogoSort());
-        sortTypeComboBox.addItem(new InsertionSort());
         sortTypeComboBox.addItem(new BubbleSort());
         sortTypeComboBox.addItem(new HeapSort());
+        sortTypeComboBox.addItem(new InsertionSort());
+        sortTypeComboBox.addItem(new QuickSort());
+        sortTypeComboBox.setSelectedItem(null);
         this.mainPanel.setBackground(Color.gray);
         this.barPanel.setBackground(Color.darkGray);
         this.add(mainPanel);
@@ -377,12 +378,12 @@ public class AppWindow extends JFrame
         this.barPanel = barPanel;
     }
 
-    public JComboBox getSortTypeComboBox()
+    public JComboBox<Sorter> getSortTypeComboBox()
     {
         return sortTypeComboBox;
     }
 
-    public void setSortTypeComboBox(JComboBox sortTypeComboBox)
+    public void setSortTypeComboBox(JComboBox<Sorter> sortTypeComboBox)
     {
         this.sortTypeComboBox = sortTypeComboBox;
     }
