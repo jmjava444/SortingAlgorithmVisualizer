@@ -1,6 +1,4 @@
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class BogoSort extends Sorter
@@ -38,16 +36,6 @@ public class BogoSort extends Sorter
             }
         }
         return allStepsArray;
-    }
-
-    public ArrayList<ArrayList<Bar>> getAllStepsArray()
-    {
-        return allStepsArray;
-    }
-
-    public void setAllStepsArray(ArrayList<ArrayList<Bar>> allStepsArray)
-    {
-        this.allStepsArray = allStepsArray;
     }
 
     public static int getMAX_ARRAY_SIZE()

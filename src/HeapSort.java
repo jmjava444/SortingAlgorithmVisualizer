@@ -53,8 +53,7 @@ public class HeapSort extends Sorter
 
     private void swap(ArrayList<Bar> barArrayList, int index1, int index2)
     {
-        Bar temp = new Bar();
-        temp = barArrayList.get(index1);
+        Bar temp = barArrayList.get(index1);
         barArrayList.set(index1, barArrayList.get(index2));
         barArrayList.set(index2, temp);
         allStepsArray.add(new ArrayList<>(barArrayList));

@@ -11,7 +11,7 @@ public class Main
     public static void main(String[] args)
     {
         Main main = new Main();
-        JFrame appWindow = new AppWindow(main);
+        new AppWindow(main);
     }
 
     /**

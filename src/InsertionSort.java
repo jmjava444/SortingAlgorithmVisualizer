@@ -33,8 +33,7 @@ public class InsertionSort extends Sorter
 
     private void swap(ArrayList<Bar> arrayList, int index1, int index2)
     {
-        Bar temp = new Bar();
-        temp = arrayList.get(index1);
+        Bar temp = arrayList.get(index1);
         arrayList.set(index1, arrayList.get(index2));
         arrayList.set(index2, temp);
     }

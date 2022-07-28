@@ -9,9 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Add Heapsort">
+    <list default="true" id="e6ea4e03-50b8-4250-9a66-7d600afd597a" name="Changes" comment="Update JComboBox to only store Sorter types. Ungenerified it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BogoSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BogoSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658979399312</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Update JComboBox to only store Sorter types. Ungenerified it.">
+      <created>1658994500820</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1658994500820</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,7 +331,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create a main object. Create an AppWindow object and plug in the main object so that they can communicate with each other. The main object will handle the instances of windows (if in the future we want multiple instance support)." />
     <MESSAGE value="Add comments to the methods that make sense, and create a toString() method that only returns the name of the class." />
     <MESSAGE value="Create a Screen class to handle returning the screen size dimensions. This way it's easy to call &quot;Screen.width&quot; instead of the entire Toolkit code. Mainly, make this an easy way to get the screen size." />
     <MESSAGE value="Update workspace.xml (IntelliJ handles this)" />
@@ -344,7 +355,8 @@
     <MESSAGE value="Add Bubble Sort Class" />
     <MESSAGE value="Create abstract toString method to the Sorter class." />
     <MESSAGE value="Add Heapsort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Heapsort" />
+    <MESSAGE value="Update JComboBox to only store Sorter types. Ungenerified it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update JComboBox to only store Sorter types. Ungenerified it." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

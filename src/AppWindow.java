@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class AppWindow extends JFrame
 {
-    private Main main;
+    private final Main main;
     private JSpinner jSpinner;
     private JButton generateNewGraphButton;
     private JButton previousStepButton;
@@ -60,7 +60,7 @@ public class AppWindow extends JFrame
         generateNewGraphButton.addActionListener(event -> generateNewGraphButtonAction());
         previousStepButton.addActionListener(event -> previousStepButtonAction());
         playButton.addActionListener(event -> playButtonAction());
-        nextStepButton.addActionListener(event -> { nextStepButtonAction(); });
+        nextStepButton.addActionListener(event -> nextStepButtonAction());
         timer = new Timer(100, event ->
         {
             if(step < allStepsArray.size() - 1)
@@ -190,8 +190,8 @@ public class AppWindow extends JFrame
     {
         if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
             displayInfoMessage("""
-                        BogoSort is a method that uses a random shuffle to sort the items and is not efficient 
-                        at all. Sorting more than 13 items will almost certainly take forever to complete.""",
+                        BogoSort is a method that uses a random shuffle to sort the items and is not efficient
+                         at all. Sorting more than 13 items will almost certainly take forever to complete.""",
                         JOptionPane.WARNING_MESSAGE);
         try
         {
@@ -286,105 +286,9 @@ public class AppWindow extends JFrame
         }
     }
 
-    public void displayInfoMessage()
-    {
-        try
-        {
-            if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
-            {
-                JOptionPane.showMessageDialog(this, "Up to " + BogoSort.getMAX_ARRAY_SIZE() +
-                        " tries were exhausted and the computer stopped to conserve resources. Items may " +
-                        "or may not be sorted.");
-            }
-            else
-                JOptionPane.showMessageDialog(this, "Sorting complete.");
-        }
-        catch(HeadlessException e)
-        {
-            System.err.println("This application is designed to have a graphical user interface. " +
-                    "Only run on a machine capable of displaying a GUI.");
-            System.exit(ERROR);
-        }
-
-    }
-
-    public JSpinner getjSpinner()
-    {
-        return jSpinner;
-    }
-
-    public void setjSpinner(JSpinner jSpinner)
-    {
-        this.jSpinner = jSpinner;
-    }
-
-    public JButton getGenerateNewGraphButton()
-    {
-        return generateNewGraphButton;
-    }
-
-    public void setGenerateNewGraphButton(JButton generateNewGraphButton)
-    {
-        this.generateNewGraphButton = generateNewGraphButton;
-    }
-
-    public JButton getPreviousStepButton()
-    {
-        return previousStepButton;
-    }
-
-    public void setPreviousStepButton(JButton previousStepButton)
-    {
-        this.previousStepButton = previousStepButton;
-    }
-
-    public JButton getPlayButton()
-    {
-        return playButton;
-    }
-
-    public void setPlayButton(JButton playButton)
-    {
-        this.playButton = playButton;
-    }
-
-    public JButton getNextStepButton()
-    {
-        return nextStepButton;
-    }
-
-    public void setNextStepButton(JButton nextStepButton)
-    {
-        this.nextStepButton = nextStepButton;
-    }
-
-    public JPanel getMainPanel()
-    {
-        return mainPanel;
-    }
-
-    public void setMainPanel(JPanel mainPanel)
-    {
-        this.mainPanel = mainPanel;
-    }
-
     public JPanel getBarPanel()
     {
         return barPanel;
     }
 
-    public void setBarPanel(JPanel barPanel)
-    {
-        this.barPanel = barPanel;
-    }
-
-    public JComboBox<Sorter> getSortTypeComboBox()
-    {
-        return sortTypeComboBox;
-    }
-
-    public void setSortTypeComboBox(JComboBox<Sorter> sortTypeComboBox)
-    {
-        this.sortTypeComboBox = sortTypeComboBox;
-    }
 }

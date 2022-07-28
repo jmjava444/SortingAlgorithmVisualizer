@@ -9,8 +9,8 @@ public class Bar extends JComponent
 	private int yPos;
 	private int width;
 	private int height;
-	private boolean isFilled;
-	private Color color;
+	private final boolean isFilled;
+	private final Color color;
 
 	public Bar()
 	{
@@ -105,25 +105,10 @@ public class Bar extends JComponent
 	{
 		this.height = height;
 	}
-	
-	public boolean getIsFilled()
-	{
-		return isFilled;
-	}
-	
-	public void setIsFilled(boolean isFilled)
-	{
-		this.isFilled = isFilled;
-	}
-	
+
 	public Color getColor()
 	{
 		return color;
-	}
-	
-	public void setColor(Color color)
-	{
-		this.color = color;
 	}
 
 	@Override
