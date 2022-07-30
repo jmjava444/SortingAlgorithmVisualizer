@@ -189,9 +189,9 @@ public class AppWindow extends JFrame
     private void sortTypeComboBoxAction()
     {
         if(sortTypeComboBox.getSelectedItem() instanceof BogoSort)
-            displayInfoMessage("""
-                        BogoSort is a method that uses a random shuffle to sort the items and is not efficient
-                         at all. Sorting more than 13 items will almost certainly take forever to complete.""",
+            displayInfoMessage("BogoSort is a method that uses a random shuffle to sort the items and is not " +
+                            "efficient \nat all. Sorting more than 13 items will almost certainly take forever to " +
+                            "complete.",
                         JOptionPane.WARNING_MESSAGE);
         try
         {
