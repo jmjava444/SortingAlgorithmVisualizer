@@ -1,5 +1,6 @@
 # SortingAlgorithmVisualizer
 A Java Swing based GUI application to visualize various comparison based sorting methods.
+
 ![](https://github.com/jmjava444/SortingAlgorithmVisualizer/blob/master/img/Sorting.gif)
 
 ## How to Use:
