@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class HeapSort extends Sorter
+public class HeapSort implements Sorter
 {
     private ArrayList<ArrayList<Bar>> allStepsArray;
 

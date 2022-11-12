@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class BogoSort extends Sorter
+public class BogoSort implements Sorter
 {
     private ArrayList<ArrayList<Bar>> allStepsArray;
     private static final int MAX_ARRAY_SIZE = 1000000;

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class QuickSort extends Sorter
+public class QuickSort implements Sorter
 {
 	// Stores what the bar array is at each step through the sorting process.
 	ArrayList<ArrayList<Bar>> allStepsArray;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BubbleSort extends Sorter
+public class BubbleSort implements Sorter
 {
     private ArrayList<ArrayList<Bar>> allStepsArray;
 

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class InsertionSort extends Sorter
+public class InsertionSort implements Sorter
 {
     private ArrayList<ArrayList<Bar>> allStepsArray;
     public InsertionSort()
