@@ -1,15 +1,21 @@
 # SortingAlgorithmVisualizer
 A Java Swing based GUI application to visualize various comparison based sorting methods.
 
+### Sorting Algorithms Implemented:
+
+- QuickSort
+- Heap Sort
+- Insertion Sort
+- Bubble Sort
+- Bogo Sort (just for fun)
+
 ![](https://github.com/jmjava444/SortingAlgorithmVisualizer/blob/master/img/Sorting.gif)
 
 ## How to Use:
 
-Disclaimer:
+Clone the repository and open in your designated IDE. It will run using Java 8 or newer, and will need to utilize a plugin that can read Java Swing *.form files. In IntelliJ IDEA, there is a plugin provided by JetBrains.
 
-I value my security as much as I value yours. It is recommended to run any executable from the internet in an isolated environment like Windows Sandbox or VirtualBox. Personally I find that Windows Sandbox is easier to configure and much faster to deploy. [How to install Windows Sandbox](https://techgenix.com/install-configure-and-use-windows-sandbox/).
-
-Make sure you download [Java Runtime Environment](https://www.java.com/download/), then execute the .jar file in [`out/artifacts/SortingAlgorithmVisualizer_jar`](https://github.com/jmjava444/SortingAlgorithmVisualizer/blob/master/out/artifacts/SortingAlgorithmVisualizer_jar/SortingAlgorithmVisualizer.jar) directory
+Releases are coming soon to make it easier to rapidly deploy on any platform.
 
 ## Screenshots:
 ### Main User Interface
